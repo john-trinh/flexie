@@ -1,27 +1,50 @@
 import React, { Component } from 'react';
-import {  createBottomTabNavigator, createStackNavigator, } from 'react-navigation';
+// import { Platform, StatusBar  } from 'react-native';
+import { createBottomTabNavigator, createStackNavigator, } from 'react-navigation';
 import NowPlayingScreen from './NowPlayingScreen';
 import TopRatedScreen from './TopRatedScreen';
 import MovieDetail from './MovieDetail';
+import SearchScreen from './SearchScreen';
+import SearchComponent from './SearchComponent';
 
 import { Icon } from 'react-native-elements';
 
 const NowPlayingStack = createStackNavigator({
   NowPlaying: {
-    screen: NowPlayingScreen
+    screen: NowPlayingScreen,
+    navigationOptions: {
+      headerRight: (<SearchComponent/>)
+    }
   },
   MovieDetail: {
     screen: MovieDetail
-  }
-});
-const TopRatedStack = createStackNavigator({
-  TopRated: {
-    screen: TopRatedScreen
   },
-  MovieDetail: {
-    screen: MovieDetail
+  SearchScreen: {
+    screen: SearchScreen
   }
 });
+
+const TopRatedStack = createStackNavigator(
+  {
+    TopRated: {
+      screen: TopRatedScreen,
+      navigationOptions: {
+        headerRight: (<SearchComponent/>)
+      }
+    },
+    MovieDetail: {
+      screen: MovieDetail
+    },
+    SearchScreen: {
+      screen: SearchScreen
+    }
+  },
+  // {
+  //   cardStyle: {
+  //     paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
+  //   }
+  // }
+);
 
 hideTab(NowPlayingStack);
 hideTab(TopRatedStack);
@@ -47,7 +70,6 @@ export const Tabs = createBottomTabNavigator({
   initialRouteName: 'NowPlaying',
   drawUnderTabBar: false
 });
-
 
 export default class TabScreen extends Component {
   render() {

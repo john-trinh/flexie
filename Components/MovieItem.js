@@ -8,7 +8,7 @@ class MovieItem extends Component {
   render() {
     let overview =this.props.overview;
     if (overview.length > 200) {
-      overview = overview.substring(0, 160) + '...';
+      overview = overview.substring(0, 150) + '...';
     }
     return (
       <TouchableOpacity onPress={() => this.props.navigation.navigate('MovieDetail', {...this.props})}>

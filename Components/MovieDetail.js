@@ -2,6 +2,7 @@ import { StackNavigator } from 'react-navigation';
 import React, { Component } from 'react';
 import { StyleSheet, Dimensions, Text, View, ScrollView, FlatList, WebView } from 'react-native';
 import { Icon } from 'react-native-elements';
+import FitImage from 'react-native-fit-image';
 
 export default class MovieDetail extends Component {
   constructor(props) {
@@ -56,6 +57,11 @@ export default class MovieDetail extends Component {
               </View>
             </View>
             <Text style={style.description}>{params.overview}</Text>
+          </View>
+          <View>
+            <FitImage
+              source={{uri:`https://image.tmdb.org/t/p/original${params.poster_path}`}}
+            />
           </View>
         </ScrollView>
       </View>
