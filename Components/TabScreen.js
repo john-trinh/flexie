@@ -38,12 +38,7 @@ const TopRatedStack = createStackNavigator(
     SearchScreen: {
       screen: SearchScreen
     }
-  },
-  // {
-  //   cardStyle: {
-  //     paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight
-  //   }
-  // }
+  }
 );
 
 hideTab(NowPlayingStack);
