@@ -1,25 +1,16 @@
 import React, { Component } from "react";
+import { StackNavigator } from 'react-navigation';
 import { Text, View, FlatList, TouchableOpacity } from "react-native";
 import Data from "./Data.json";
+import MovieListComponent from './MovieListComponent';
 
 export default class TopRatedScreen extends Component {
-  // componentDidMount() {
-  //   // let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed`;
-  //   // let response = await fetch(url);
-  //   // let data = await response.json();
-  //   // this.setState({
-  //   //   movieData: Data,
-  //   //   movieToShow: Data.results
-  //   // });
-  //   // console.log(this.state.movieToShow);
-  // }
-  // renderItem(movie) {
-  //   return <Movie {...movie} />;
-  // }
-
+  static navigationOptions = {
+    title: 'Top Rated'
+  }
   render() {
     return (
-     <Text>lksflsflsf</Text>
+      <MovieListComponent category='top_rated' />
     );
   }
 }
