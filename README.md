@@ -8,6 +8,5 @@
 ## Update
 - Specific layout for tablet screen
 - Handle error from server.
-
-##Demo
+## Demo
  Check out on expo: https://expo.io/@johntrinh/flexie
