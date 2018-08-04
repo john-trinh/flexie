@@ -9,5 +9,5 @@
 - Specific layout for tablet screen
 - Handle error from server.
 
-##Demo
- Check out on expo: https://expo.io/@johntrinh/flexie
+##Demo 
+Check out on expo: https://expo.io/@johntrinh/flexie
